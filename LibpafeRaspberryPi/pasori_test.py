@@ -15,7 +15,11 @@ TEST_DATA = "test data."
 
 
 def test(libpafe, pasori):
+    # Python2の場合
     data = c_char_p(TEST_DATA)
+    # Python3の場合
+    # data = c_wchar_p(TEST_DATA)
+    
     data_length = c_int(len(TEST_DATA) - 1)
 
     print("Echo test...", end="")
